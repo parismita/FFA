@@ -1,0 +1,13 @@
+name: "Training optimization using Firefly algorithm"
+output_dir: "."
+navbar:
+  title: "Training optimization using Firefly algorithm"
+  left:
+   - text: "Overview"
+     href: index.html
+   - text: "Idea"
+     href: easy.html
+   - text: "Method"
+     href: medium.html
+   - text: "Output"
+     href: hard.html
