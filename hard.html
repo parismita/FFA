@@ -306,7 +306,27 @@ div.tocify {
 </div>
 
 
-
+<p>The output of firefly algorithm on a non convex rosenburg objective function is given below. The rosenburg function theoritically has minima at (1,1). Thus we show from code that the best value converges to (1,1).</p>
+<p>here I am plotting the contour plot for every 10th iteration for firefly.</p>
+<p><img src="Selection_014.png" width="80%" /><img src="Selection_015.png" width="80%" /></p>
+<p>initial value of contour and variants as given above.</p>
+<p>10th iteration:</p>
+<p>best value : [1.00606871 1.00701511]</p>
+<p>loss: 0.004125894795</p>
+<p><img src="Selection_016.png" width="80%" /></p>
+<p>20th iteration:</p>
+<p>best value [1.00424683 1.00791168]</p>
+<p>loss 7.41994381111e-05</p>
+<p><img src="Selection_017.png" width="80%" /></p>
+<p>30th iteration:</p>
+<p>best value [1.00410473 1.00797904]</p>
+<p>loss 2.66335247253e-05</p>
+<p><img src="Selection_018.png" width="80%" /></p>
+<p>The final plot and clusters</p>
+<p>best value [1.00400901 1.00801837]</p>
+<p>loss 1.61509216648e-05</p>
+<p><img src="Selection_020.png" width="80%" /><img src="Selection_019.png" width="80%" /></p>
+<p>Doing mlp on mnist, there are 55,000 training data. The mlp is taking 1 day per epoch as there are 10^9 computations per firefly thus taking 1 minute per firefly. To decrease the time taken, we can use the optimised firefly algorithm whose time complexity is O(nlogn). and take smaller minibatch and lesser variant size.</p>
 
 
 

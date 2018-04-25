@@ -11,7 +11,7 @@
 
 <meta name="author" content="Parismita Das" />
 
-<meta name="date" content="2018-01-11" />
+<meta name="date" content="2018-04-11" />
 
 <title>Method</title>
 
@@ -301,15 +301,26 @@ div.tocify {
 
 <h1 class="title toc-ignore">Method</h1>
 <h4 class="author"><em>Parismita Das</em></h4>
-<h4 class="date"><em>11 January 2018</em></h4>
+<h4 class="date"><em>11 April 2018</em></h4>
 
 </div>
 
 
 <p>For optimizing the training algorithm, we tune every parameter independently using firefly algorithm.</p>
-<p>The firefly algorithm is given below: <img src="Selection_014.png" width="80%" /></p>
+<p>The firefly algorithm is given below: <img src="Selection_013.png" width="80%" /></p>
 <p>Here we are training on MNIST data, taking 3 layered perceptron model and using tensorflow for it. The weight and bias of the layers are flattened that is denoted by x here, and send to the firefly algorithm for getting the best value. 10 Varients of the weight and the bias is created per firefly algorithm. Cross-Entropy is used as the objective function f(x) as described above. The best value is the one that maximizes the negetive of the objective function, we move it to a direction using ADAM.</p>
 <p>The algorithm for mlp:</p>
+<p>for each mini batch: 1) create 3 batches</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>create 10 variants of weight and biases of each layer</p></li>
+<li><p>flatten and concatinate the weights and biases as w1+b1, w2+b2, w3+b3</p></li>
+<li><p>call the firefly algorithm</p></li>
+<li><p>do forward pass and calculate loss and move the variants best weigth and bias and move the best one by ADAM</p></li>
+<li><p>circularly assign the batches to each weight and bias so that each parameter gets to see larger part of the dataset.</p></li>
+<li><p>pass the variants to the next itteration.</p></li>
+<li><p>repeat.</p></li>
+</ol>
+<p>when all minibatches get completed, repeat for next epoch</p>
 
 
 
